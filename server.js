@@ -47,6 +47,20 @@ app.post('/login',function(req,res){
     }
 })
 
+app.post('/profile',function(req,res){
+    const name=req.body.name;
+    const age=req.body.age;
+    const profession=req.body.profession;
+
+    res.json({
+        success: true,
+        message: 'profile successfully created!',
+        name: req.body.name,
+        age: req.body.age,
+        profession: req.body.profession
+    })
+})
+
 app.listen(8000,function() {
     console.log("server is running")
 })
